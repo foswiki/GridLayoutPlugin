@@ -32,7 +32,7 @@ sub new {
 
   my $this = bless({
     border => 0,
-    spacing => 4,
+    gutter => 4,
     insideRow => 0,
     insideCol => 0,
     rowWidth => 0,
@@ -49,15 +49,15 @@ sub begin {
   my $class = $params->{class} ? ' '.$params->{class}:'';
   my $style = $params->{style} ? " style='".$params->{style}."'":'';
 
-  my $spacing = $params->{spacing};
-  $spacing = 4 unless defined $spacing;
+  my $gutter = $params->{gutter};
+  $gutter = 4 unless defined $gutter;
 
-  throw Error::Simple("illegal spacing $spacing") 
-    if ($spacing =~ /[^\d]/ || $spacing < 0 || $spacing > 5);
+  throw Error::Simple("illegal gutter $gutter") 
+    if ($gutter =~ /[^\d]/ || $gutter < 0 || $gutter > 5);
 
-  $this->{spacing} = $spacing;
+  $this->{gutter} = $gutter;
 
-  return "<div class='foswikiGrid gutter$spacing$class'$style>";
+  return "<div class='foswikiGrid gutter$gutter$class'$style>";
 }
 
 sub end {
@@ -145,7 +145,6 @@ sub endCol {
 
   return $result;
 }
-
 
 
 1;
