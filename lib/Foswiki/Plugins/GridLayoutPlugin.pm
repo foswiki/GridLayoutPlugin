@@ -43,6 +43,8 @@ sub initPlugin {
   Foswiki::Func::registerTagHandler('BEGINCOL', sub { return core->BEGINCOL(@_); });
   Foswiki::Func::registerTagHandler('ENDCOL', sub { return core->ENDCOL(@_); });
 
+  $core = undef;
+
   return 1;
 }
 

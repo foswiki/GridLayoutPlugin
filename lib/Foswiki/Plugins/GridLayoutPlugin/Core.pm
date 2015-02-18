@@ -43,6 +43,7 @@ sub new {
   }, $class);
 
   $this->{stack} = [];
+  $this->{doneCss} = 0;
 
   return $this;
 }
@@ -73,10 +74,23 @@ sub currentGrid {
   return $grid;
 }
 
+sub addCss {
+  my $this = shift;
+
+  return if $this->{doneCss};
+  $this->{doneCss} = 1;
+
+Foswiki::Func::addToZone('head', 'GRIDLAYOUT', <<HERE);
+<link rel='stylesheet' href='%PUBURL%/%SYSTEMWEB%/GridLayoutPlugin/grid.css' media='all' />
+HERE
+}
+
 sub BEGINGRID {
   my ($this, $session, $params, $topic, $web) = @_;
 
   my $result = '';
+
+  $this->addCss;
 
   try {
     my $grid = new Foswiki::Plugins::GridLayoutPlugin::Grid();
