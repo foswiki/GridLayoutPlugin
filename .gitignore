@@ -1,0 +1,5 @@
+*.gz
+*,v
+igp_*
+*.swp
+pub/System/GridLayoutPlugin/grid.css
