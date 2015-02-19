@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1424280840" format="1.1"  version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="reprev" date="1424346230" format="1.1" reprev="5" version="5"}%
 ---+!! %TOPIC%
 %SHORTDESCRIPTION%
 
@@ -111,14 +111,31 @@ That is when column withds add up to 12 will a new row be inserted automatically
 Starts a new column element; closes any previous column element; closes a previous row element as well if widths add up to or exceed 12.
 
 | *Parameter* | *Description* | *Default* |
-| "..." or width="..." | specifies the fraction of the row this column spans; values maybe 1,2,...12 |  12 - &lt;width already being used in the row |
+| "..." or width="..." | specifies the fraction of the row this column spans; values maybe 1, 2, ... , 12 | 12 - =&lt;width already being used in the row>= |
 | border="on/off" | switch on/off borders this and the next col | the =border= value as specified in the parent =%<nop>BEGINROW%= |
 | class="..." | add a css class to the =foswikiCol= element | |
 | style="..." | add inline css styles to the =foswikiCol= element | |
 
 Macros =%<nop>ENDCOL%= and =%<nop>ENDROW%= are fully optional and may be specified explicitly. 
 
-Below example defines a grid with two rows, row one using a 4/4/4 division, row two a 3/3/3/3 division.
+---++ Examples 
+
+---+++ Example 1: hello world
+
+align two cells horizontally
+
+<verbatim class="tml">
+%BEGINGRID%
+%BEGINCOL{"6"}%
+  hello
+%BEGINCOL%
+  world
+%ENDGRID%
+</verbatim>
+
+---+++ Example 2: dividing rows
+
+a grid with two rows, row one using a 4/4/4 division, row two a 3/3/3/3 division.
 
 <verbatim class="tml">
 %BEGINGRID%
@@ -139,8 +156,9 @@ Below example defines a grid with two rows, row one using a 4/4/4 division, row 
 %ENDGRID%
 </verbatim>
 
----++ Layout examples 
+---+++ Example 3: all columns
 
+<div class="%IF{"context GridLayoutPluginEnabled" then="gridLayoutPluginInstalled" else="gridLayoutPluginNotInstalled"}%">
 <div class="foswikiPageForm gutterSelector">
 *Select gutter:* 
 <select class="foswikiSelect">
@@ -190,206 +208,227 @@ jQuery(function($) {
   right:0;
   background-color:#fff;
 }
+.gridLayoutPluginNotInstalled .gutterSelector,
+.gridLayoutPluginNotInstalled .foswikiGrid,
+.gridLayoutPluginInstalled .screenshot {
+  display:none;
+}
 </style>
 </literal>
 
----+++ Columns
-<div class="foswikiGrid test1">
-  <div class="foswikiRow">
-    <div class="foswikiCol1">1/12</div>
-    <div class="foswikiCol1">1/12</div>
-    <div class="foswikiCol1">1/12</div>
-    <div class="foswikiCol1">1/12</div>
-    <div class="foswikiCol1">1/12</div>
-    <div class="foswikiCol1">1/12</div>
-    <div class="foswikiCol1">1/12</div>
-    <div class="foswikiCol1">1/12</div>
-    <div class="foswikiCol1">1/12</div>
-    <div class="foswikiCol1">1/12</div>
-    <div class="foswikiCol1">1/12</div>
-    <div class="foswikiCol1">1/12</div>
-  </div>
-  <div class="foswikiRow">
-    <div class="foswikiCol2">2/12</div>
-    <div class="foswikiCol2">2/12</div>
-    <div class="foswikiCol2">2/12</div>
-    <div class="foswikiCol2">2/12</div>
-    <div class="foswikiCol2">2/12</div>
-    <div class="foswikiCol2">2/12</div>
-  </div>
-  <div class="foswikiRow">
-    <div class="foswikiCol3">3/12</div>
-    <div class="foswikiCol3">3/12</div>
-    <div class="foswikiCol3">3/12</div>
-    <div class="foswikiCol3">3/12</div>
-  </div>
-  <div class="foswikiRow">
-    <div class="foswikiCol4">4/12</div>
-    <div class="foswikiCol4">4/12</div>
-    <div class="foswikiCol4">4/12</div>
-  </div>
-  <div class="foswikiRow">
-    <div class="foswikiCol6">6/12</div>
-    <div class="foswikiCol6">6/12</div>
-  </div>
-  <div class="foswikiRow">
-    <div class="foswikiCol12">12/12</div>
-  </div>
-</div>
+<img class="screenshot" src="%ATTACHURLPATH%/GridLayoutPluginSnap1.png" width="819" height="252" />
+%BEGINGRID{class="test1"}%
+%BEGINCOL{"1"}%
+1/12
+%BEGINCOL{"1"}%
+1/12
+%BEGINCOL{"1"}%
+1/12
+%BEGINCOL{"1"}%
+1/12
+%BEGINCOL{"1"}%
+1/12
+%BEGINCOL{"1"}%
+1/12
+%BEGINCOL{"1"}%
+1/12
+%BEGINCOL{"1"}%
+1/12
+%BEGINCOL{"1"}%
+1/12
+%BEGINCOL{"1"}%
+1/12
+%BEGINCOL{"1"}%
+1/12
+%BEGINCOL{"1"}%
+1/12
+%BEGINCOL{"2"}%
+2/12
+%BEGINCOL{"2"}%
+2/12
+%BEGINCOL{"2"}%
+2/12
+%BEGINCOL{"2"}%
+2/12
+%BEGINCOL{"2"}%
+2/12
+%BEGINCOL{"2"}%
+2/12
+%BEGINCOL{"3"}%
+3/12
+%BEGINCOL{"3"}%
+3/12
+%BEGINCOL{"3"}%
+3/12
+%BEGINCOL{"3"}%
+3/12
+%BEGINCOL{"4"}%
+4/12
+%BEGINCOL{"4"}%
+4/12
+%BEGINCOL{"4"}%
+4/12
+%BEGINCOL{"6"}%
+6/12
+%BEGINCOL{"6"}%
+6/12
+%BEGINCOL{"12"}%
+12/12
+%ENDGRID%
 
----+++ Mix Columns
-<div class="foswikiGrid test1">
-  <div class="foswikiRow">
-    <div class="foswikiCol7">7/12</div>
-    <div class="foswikiCol5">5/12</div>
-  </div>
-  <div class="foswikiRow">
-    <div class="foswikiCol3">3/12</div>
-    <div class="foswikiCol4">4/12</div>
-    <div class="foswikiCol5">5/12</div>
-  </div>
-  <div class="foswikiRow">
-    <div class="foswikiCol7">7/12</div>
-    <div class="foswikiCol2">2/12</div>
-    <div class="foswikiCol3">3/12</div>
-  </div>
-  <div class="foswikiRow">
-    <div class="foswikiCol7">7/12</div>
-    <div class="foswikiCol1">1/12</div>
-    <div class="foswikiCol1">1/12</div>
-    <div class="foswikiCol1">1/12</div>
-    <div class="foswikiCol1">1/12</div>
-    <div class="foswikiCol1">1/12</div>
-  </div>
-</div>
+---+++ Example 4: mixed columns
 
-<div class="foswikiGrid test1">
-  <div class="foswikiRow">
-    <div class="foswikiCol8">8/12</div>
-    <div class="foswikiCol4">4/12</div>
-  </div>
-  <div class="foswikiRow">
-    <div class="foswikiCol4">4/12</div>
-    <div class="foswikiCol4">4/12</div>
-    <div class="foswikiCol4">4/12</div>
-  </div>
-  <div class="foswikiRow">
-    <div class="foswikiCol8">8/12</div>
-    <div class="foswikiCol2">2/12</div>
-    <div class="foswikiCol2">2/12</div>
-  </div>
-  <div class="foswikiRow">
-    <div class="foswikiCol8">8/12</div>
-    <div class="foswikiCol3">3/12</div>
-    <div class="foswikiCol1">1/12</div>
-  </div>
-  <div class="foswikiRow">
-    <div class="foswikiCol8">8/12</div>
-    <div class="foswikiCol1">1/12</div>
-    <div class="foswikiCol1">1/12</div>
-    <div class="foswikiCol1">1/12</div>
-    <div class="foswikiCol1">1/12</div>
-  </div>
-</div>
+<img class="screenshot" src="%ATTACHURLPATH%/GridLayoutPluginSnap2.png" width="819" height="672" />
+%BEGINGRID{class="test1"}%
+%BEGINCOL{"7"}%
+7/12
+%BEGINCOL{"5"}%
+5/12
+%BEGINCOL{"3"}%
+3/12
+%BEGINCOL{"4"}%
+4/12
+%BEGINCOL{"5"}%
+5/12
+%BEGINCOL{"7"}%
+7/12
+%BEGINCOL{"2"}%
+2/12
+%BEGINCOL{"3"}%
+3/12
+%BEGINCOL{"7"}%
+7/12
+%BEGINCOL{"1"}%
+1/12
+%BEGINCOL{"1"}%
+1/12
+%BEGINCOL{"1"}%
+1/12
+%BEGINCOL{"1"}%
+1/12
+%BEGINCOL{"1"}%
+1/12
+%ENDGRID%
 
-<div class="foswikiGrid test1">
-  <div class="foswikiRow">
-    <div class="foswikiCol9">9/12</div>
-    <div class="foswikiCol3">3/12</div>
-  </div>
-  <div class="foswikiRow">
-    <div class="foswikiCol6">6/12</div>
-    <div class="foswikiCol3">3/12</div>
-    <div class="foswikiCol3">3/12</div>
-  </div>
-  <div class="foswikiRow">
-    <div class="foswikiCol10">10/12</div>
-    <div class="foswikiCol2">2/12</div>
-  </div>
-  <div class="foswikiRow">
-    <div class="foswikiCol5">5/12</div>
-    <div class="foswikiCol5">5/12</div>
-    <div class="foswikiCol2">2/12</div>
-  </div>
-  <div class="foswikiRow">
-    <div class="foswikiCol11">11/12</div>
-    <div class="foswikiCol1">1/12</div>
-  </div>
-  <div class="foswikiRow">
-    <div class="foswikiCol5">5/12</div>
-    <div class="foswikiCol6">6/12</div>
-    <div class="foswikiCol1">1/12</div>
-  </div>
-</div>
+%BEGINGRID{class="test1"}%
+%BEGINCOL{"8"}%
+8/12
+%BEGINCOL{"4"}%
+4/12
+%BEGINCOL{"4"}%
+4/12
+%BEGINCOL{"4"}%
+4/12
+%BEGINCOL{"4"}%
+4/12
+%BEGINCOL{"8"}%
+8/12
+%BEGINCOL{"2"}%
+2/12
+%BEGINCOL{"2"}%
+2/12
+%BEGINCOL{"8"}%
+8/12
+%BEGINCOL{"3"}%
+3/12
+%BEGINCOL{"1"}%
+1/12
+%BEGINCOL{"8"}%
+8/12
+%BEGINCOL{"1"}%
+1/12
+%BEGINCOL{"1"}%
+1/12
+%BEGINCOL{"1"}%
+1/12
+%BEGINCOL{"1"}%
+1/12
+%ENDGRID%
 
----+++ Text example
-<div class="foswikiGrid test2">
-  <div class="foswikiRow">
-    <div class="foswikiCol6">
-      Ac velit, eu, cras, amet, elementum scelerisque nisi purus ac turpis integer purus porta adipiscing? Penatibus, 
-      habitasse tristique est nunc ac sit sociis turpis! Dignissim sociis odio augue turpis cursus, tristique tincidunt? 
-      Egestas, dictumst? Hac dictumst? Mid dapibus dignissim nisi, facilisis in, scelerisque in, egestas penatibus cras 
-      sit integer? Aenean? 
-    </div>
-    <div class="foswikiCol6 border">
-      elementum cras dignissim et tortor mus, elementum, ac amet! Lacus, natoque ac dapibus non egestas placerat 
-      sed diam integer   nisi ut? Nisi eros amet! Augue, nunc. Nisi lectus sit, turpis, egestas magnis facilisis, 
-      dapibus sagittis, cursus enim duis adipiscing turpis sagittis ultrices dis pulvinar diam, integer eu, vel, 
-      phasellus nec nascetur tortor, duis pid lorem  porta mid! Tempor integer lundium facilisis nisi sed sed 
-      augue porta, cursus, a eu.
-    </div>
-  </div>
----
-  <div class="foswikiRow">
-    <div class="foswikiCol4">
-      Ac velit, eu, cras, amet, elementum scelerisque nisi purus ac turpis integer purus porta adipiscing? Penatibus, 
-      habitasse tristique est nunc ac sit sociis turpis! Dignissim sociis odio augue turpis cursus, tristique tincidunt? 
-      Egestas, dictumst? Hac dictumst? Mid dapibus dignissim nisi, facilisis in, scelerisque in, egestas penatibus cras 
-      sit integer? Aenean? 
-    </div>
-    <div class="foswikiCol4 border">
-      elementum cras dignissim et tortor mus, elementum, ac amet! Lacus, natoque ac dapibus non egestas placerat 
-      sed diam integer   nisi ut? Nisi eros amet! Augue, nunc. Nisi lectus sit, turpis, egestas magnis facilisis, 
-      dapibus sagittis, cursus enim duis adipiscing turpis sagittis ultrices dis pulvinar diam, integer eu, vel, 
-      phasellus nec nascetur tortor, duis pid lorem  porta mid! Tempor integer lundium facilisis nisi sed sed 
-      augue porta, cursus, a eu.
-    </div>
-    <div class="foswikiCol4 border">
-      elementum cras dignissim et tortor mus, elementum, ac amet! Lacus, natoque ac dapibus non egestas placerat 
-      sed diam integer   nisi ut? Nisi eros amet! Augue, nunc. Nisi lectus sit, turpis, egestas magnis facilisis, 
-      dapibus sagittis, cursus enim duis adipiscing turpis sagittis ultrices dis pulvinar diam, integer eu, vel, 
-      phasellus nec nascetur tortor, duis pid lorem  porta mid! Tempor integer lundium facilisis nisi sed sed 
-      augue porta, cursus, a eu.
-    </div>
-  </div>
----
-  <div class="foswikiRow">
-    <div class="foswikiCol8">
-      Ac velit, eu, cras, amet, elementum scelerisque nisi purus ac turpis integer purus porta adipiscing? Penatibus, 
-      habitasse tristique est nunc ac sit sociis turpis! Dignissim sociis odio augue turpis cursus, tristique tincidunt? 
-      Egestas, dictumst? Hac dictumst? Mid dapibus dignissim nisi, facilisis in, scelerisque in, egestas penatibus cras 
-      sit integer? Aenean? 
-    </div>
-    <div class="foswikiCol4 border">
-      elementum cras dignissim et tortor mus, elementum, ac amet! Lacus, natoque ac dapibus non egestas placerat 
-      sed diam integer   nisi ut? Nisi eros amet! Augue, nunc. 
-    </div>
-  </div>
----
-  <div class="foswikiRow">
-    <div class="foswikiCol4">
-      Ac velit, eu, cras, amet, elementum scelerisque nisi purus ac turpis integer purus porta adipiscing? Penatibus, 
-      habitasse tristique est nunc ac sit sociis turpis! Dignissim sociis odio augue turpis cursus, tristique tincidunt? 
-    </div>
-    <div class="foswikiCol8">
-      elementum cras dignissim et tortor mus, elementum, ac amet! Lacus, natoque ac dapibus non egestas placerat 
-      sed diam integer   nisi ut? Nisi eros amet! Augue, nunc. Nisi lectus sit, turpis, egestas magnis facilisis, 
-      dapibus sagittis, cursus enim duis adipiscing turpis sagittis ultrices dis pulvinar diam, integer eu, vel, 
-      phasellus nec nascetur tortor, duis pid lorem  porta mid! Tempor integer lundium facilisis nisi sed sed 
-      augue porta, cursus, a eu.
-    </div>
-  </div>
-</div><!-- end of grid -->
+%BEGINGRID{class="test1"}%
+%BEGINCOL{"9"}%
+9/12
+%BEGINCOL{"3"}%
+3/12
+%BEGINCOL{"6"}%
+6/12
+%BEGINCOL{"3"}%
+3/12
+%BEGINCOL{"3"}%
+3/12
+%BEGINCOL{"10"}%
+10/12
+%BEGINCOL{"2"}%
+2/12
+%BEGINCOL{"5"}%
+5/12
+%BEGINCOL{"5"}%
+5/12
+%BEGINCOL{"2"}%
+2/12
+%BEGINCOL{"11"}%
+11/12
+%BEGINCOL{"1"}%
+1/12
+%BEGINCOL{"5"}%
+5/12
+%BEGINCOL{"6"}%
+6/12
+%BEGINCOL{"1"}%
+1/12
+%ENDGRID%
+
+---+++ Example 5: text & borders
+
+<img class="screenshot" src="%ATTACHURLPATH%/GridLayoutPluginSnap3.png" width="819" height="767" />
+%BEGINGRID{class="test2" border="on"}%
+%BEGINCOL{"6"}%
+  Ac velit, eu, cras, amet, elementum scelerisque nisi purus ac turpis integer purus porta adipiscing? Penatibus, 
+  habitasse tristique est nunc ac sit sociis turpis! Dignissim sociis odio augue turpis cursus, tristique tincidunt? 
+  Egestas, dictumst? Hac dictumst? Mid dapibus dignissim nisi, facilisis in, scelerisque in, egestas penatibus cras 
+  sit integer? Aenean? 
+%BEGINCOL{"6"}%
+  elementum cras dignissim et tortor mus, elementum, ac amet! Lacus, natoque ac dapibus non egestas placerat 
+  sed diam integer   nisi ut? Nisi eros amet! Augue, nunc. Nisi lectus sit, turpis, egestas magnis facilisis, 
+  dapibus sagittis, cursus enim duis adipiscing turpis sagittis ultrices dis pulvinar diam, integer eu, vel, 
+  phasellus nec nascetur tortor, duis pid lorem  porta mid! Tempor integer lundium facilisis nisi sed sed 
+  augue porta, cursus, a eu.
+%BEGINCOL{"4"}%
+  Ac velit, eu, cras, amet, elementum scelerisque nisi purus ac turpis integer purus porta adipiscing? Penatibus, 
+  habitasse tristique est nunc ac sit sociis turpis! Dignissim sociis odio augue turpis cursus, tristique tincidunt? 
+  Egestas, dictumst? Hac dictumst? Mid dapibus dignissim nisi, facilisis in, scelerisque in, egestas penatibus cras 
+  sit integer? Aenean? 
+%BEGINCOL{"4"}%
+  elementum cras dignissim et tortor mus, elementum, ac amet! Lacus, natoque ac dapibus non egestas placerat 
+  sed diam integer   nisi ut? Nisi eros amet! Augue, nunc. Nisi lectus sit, turpis, egestas magnis facilisis, 
+  dapibus sagittis, cursus enim duis adipiscing turpis sagittis ultrices dis pulvinar diam, integer eu, vel, 
+  phasellus nec nascetur tortor, duis pid lorem  porta mid! Tempor integer lundium facilisis nisi sed sed 
+  augue porta, cursus, a eu.
+%BEGINCOL{"4"}%
+  elementum cras dignissim et tortor mus, elementum, ac amet! Lacus, natoque ac dapibus non egestas placerat 
+  sed diam integer   nisi ut? Nisi eros amet! Augue, nunc. Nisi lectus sit, turpis, egestas magnis facilisis, 
+  dapibus sagittis, cursus enim duis adipiscing turpis sagittis ultrices dis pulvinar diam, integer eu, vel, 
+  phasellus nec nascetur tortor, duis pid lorem  porta mid! Tempor integer lundium facilisis nisi sed sed 
+  augue porta, cursus, a eu.
+%BEGINCOL{"8"}%
+  Ac velit, eu, cras, amet, elementum scelerisque nisi purus ac turpis integer purus porta adipiscing? Penatibus, 
+  habitasse tristique est nunc ac sit sociis turpis! Dignissim sociis odio augue turpis cursus, tristique tincidunt? 
+  Egestas, dictumst? Hac dictumst? Mid dapibus dignissim nisi, facilisis in, scelerisque in, egestas penatibus cras 
+  sit integer? Aenean? 
+%BEGINCOL{"4"}%
+  elementum cras dignissim et tortor mus, elementum, ac amet! Lacus, natoque ac dapibus non egestas placerat 
+  sed diam integer   nisi ut? Nisi eros amet! Augue, nunc. 
+%BEGINCOL{"4"}%
+  Ac velit, eu, cras, amet, elementum scelerisque nisi purus ac turpis integer purus porta adipiscing? Penatibus, 
+  habitasse tristique est nunc ac sit sociis turpis! Dignissim sociis odio augue turpis cursus, tristique tincidunt? 
+%BEGINCOL{"8"}%
+  elementum cras dignissim et tortor mus, elementum, ac amet! Lacus, natoque ac dapibus non egestas placerat 
+  sed diam integer   nisi ut? Nisi eros amet! Augue, nunc. Nisi lectus sit, turpis, egestas magnis facilisis, 
+  dapibus sagittis, cursus enim duis adipiscing turpis sagittis ultrices dis pulvinar diam, integer eu, vel, 
+  phasellus nec nascetur tortor, duis pid lorem  porta mid! Tempor integer lundium facilisis nisi sed sed 
+  augue porta, cursus, a eu.
+%ENDGRID%
+</div>
 
 ---++ Installation Instructions
 
@@ -406,6 +445,12 @@ jQuery(function($) {
 |  Release: | %$RELEASE% |
 |  Version: | %$VERSION% |
 |  Change History: | <!-- versions below in reverse order -->&nbsp; |
+|  19 Feb 2015 | initial release |
 |  Dependencies: | %$DEPENDENCIES% |
 |  Home page: | Foswiki:Extensions/%TOPIC% |
 |  Support: | Foswiki:Support/%TOPIC% |
+
+%META:FILEATTACHMENT{name="GridLayoutPluginSnap1-small.png" attachment="GridLayoutPluginSnap1-small.png" attr="t" comment="" date="1424345067" size="6751" user="micha" version="1"}%
+%META:FILEATTACHMENT{name="GridLayoutPluginSnap3.png" attachment="GridLayoutPluginSnap3.png" attr="" comment="" date="1424345069" size="208417" user="micha" version="1"}%
+%META:FILEATTACHMENT{name="GridLayoutPluginSnap2.png" attachment="GridLayoutPluginSnap2.png" attr="" comment="" date="1424345070" size="27447" user="micha" version="1"}%
+%META:FILEATTACHMENT{name="GridLayoutPluginSnap1.png" attachment="GridLayoutPluginSnap1.png" attr="" comment="" date="1424345072" size="12089" user="micha" version="1"}%

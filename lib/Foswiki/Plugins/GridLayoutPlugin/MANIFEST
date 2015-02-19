@@ -6,5 +6,9 @@ lib/Foswiki/Plugins/GridLayoutPlugin/Grid.pm 0644
 lib/Foswiki/Plugins/GridLayoutPlugin.pm 0644
 pub/System/GridLayoutPlugin/grid.css 0644
 pub/System/GridLayoutPlugin/grid.css.gz 0644
+pub/System/GridLayoutPlugin/GridLayoutPluginSnap1.png 0644
+pub/System/GridLayoutPlugin/GridLayoutPluginSnap1-small.png 0644
+pub/System/GridLayoutPlugin/GridLayoutPluginSnap2.png 0644
+pub/System/GridLayoutPlugin/GridLayoutPluginSnap3.png 0644
 pub/System/GridLayoutPlugin/grid.uncompressed.css 0644
 pub/System/GridLayoutPlugin/Makefile 0644

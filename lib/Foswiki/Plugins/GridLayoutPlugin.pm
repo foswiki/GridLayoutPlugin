@@ -20,9 +20,9 @@ use warnings;
 
 use Foswiki::Func ();
 
-our $VERSION = '0.01';
-our $RELEASE = '0.01';
-our $SHORTDESCRIPTION = 'A Grid Layout Framework';
+our $VERSION = '1.00';
+our $RELEASE = '1.00';
+our $SHORTDESCRIPTION = 'A 12er grid system for responsive layouts';
 our $NO_PREFS_IN_TOPIC = 1;
 our $core;
 
