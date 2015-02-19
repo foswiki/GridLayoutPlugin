@@ -182,21 +182,21 @@ jQuery(function($) {
 });
 </script>
 <style>
-.foswikiGrid.test1 {
+.test1 .foswikiGrid {
   text-align: center;
   background-color: #eee;
   line-height:3em;
 }
-.foswikiGrid.test1 .foswikiRow {
+.test1 .foswikiGrid .foswikiRow {
   margin-top:0;
 }
-.foswikiGrid.test1 .foswikiRow div {
+.test1 .foswikiGrid .foswikiRow div {
   background-color: #FFC0CB;
 }
-.foswikiGrid.test1 .foswikiRow .odd {
+.test1 .foswikiGrid .foswikiRow .odd {
   background-color: #ADD8E6;
 }
-.foswikiGrid.test2 {
+.test2 .foswikiGrid {
   text-align:justify;
 }
 .gutterSelector {
@@ -209,7 +209,8 @@ jQuery(function($) {
   background-color:#fff;
 }
 .gridLayoutPluginNotInstalled .gutterSelector,
-.gridLayoutPluginNotInstalled .foswikiGrid,
+.gridLayoutPluginNotInstalled .test1,
+.gridLayoutPluginNotInstalled .test2,
 .gridLayoutPluginInstalled .screenshot {
   display:none;
 }
@@ -217,7 +218,8 @@ jQuery(function($) {
 </literal>
 
 <img class="screenshot" src="%ATTACHURLPATH%/GridLayoutPluginSnap1.png" width="819" height="252" />
-%BEGINGRID{class="test1"}%
+<div class="test1">
+%BEGINGRID%
 %BEGINCOL{"1"}%
 1/12
 %BEGINCOL{"1"}%
@@ -275,11 +277,13 @@ jQuery(function($) {
 %BEGINCOL{"12"}%
 12/12
 %ENDGRID%
+</div>
 
 ---+++ Example 4: mixed columns
 
 <img class="screenshot" src="%ATTACHURLPATH%/GridLayoutPluginSnap2.png" width="819" height="672" />
-%BEGINGRID{class="test1"}%
+<div class="test1">
+%BEGINGRID%
 %BEGINCOL{"7"}%
 7/12
 %BEGINCOL{"5"}%
@@ -309,8 +313,10 @@ jQuery(function($) {
 %BEGINCOL{"1"}%
 1/12
 %ENDGRID%
+</div>
 
-%BEGINGRID{class="test1"}%
+<div class="test1">
+%BEGINGRID%
 %BEGINCOL{"8"}%
 8/12
 %BEGINCOL{"4"}%
@@ -344,8 +350,10 @@ jQuery(function($) {
 %BEGINCOL{"1"}%
 1/12
 %ENDGRID%
+</div>
 
-%BEGINGRID{class="test1"}%
+<div class="test1">
+%BEGINGRID%
 %BEGINCOL{"9"}%
 9/12
 %BEGINCOL{"3"}%
@@ -377,11 +385,13 @@ jQuery(function($) {
 %BEGINCOL{"1"}%
 1/12
 %ENDGRID%
+</div>
 
 ---+++ Example 5: text & borders
 
 <img class="screenshot" src="%ATTACHURLPATH%/GridLayoutPluginSnap3.png" width="819" height="767" />
-%BEGINGRID{class="test2" border="on"}%
+<div class="test2">
+%BEGINGRID{border="on"}%
 %BEGINCOL{"6"}%
   Ac velit, eu, cras, amet, elementum scelerisque nisi purus ac turpis integer purus porta adipiscing? Penatibus, 
   habitasse tristique est nunc ac sit sociis turpis! Dignissim sociis odio augue turpis cursus, tristique tincidunt? 
@@ -428,6 +438,7 @@ jQuery(function($) {
   phasellus nec nascetur tortor, duis pid lorem  porta mid! Tempor integer lundium facilisis nisi sed sed 
   augue porta, cursus, a eu.
 %ENDGRID%
+</div>
 </div>
 
 ---++ Installation Instructions
