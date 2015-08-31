@@ -31,11 +31,20 @@ sub new {
   my $class = shift;
 
   my $this = bless({
+    classes => {
+      grid =>  $Foswiki::cfg{GridLayoutPlugin}{GridClass} || "foswikiGrid", 
+      row =>   $Foswiki::cfg{GridLayoutPlugin}{RowClasses} || "foswikiRow",
+      col =>      $Foswiki::cfg{GridLayoutPlugin}{ColClass} || "foswikiCol",
+      colSize =>  $Foswiki::cfg{GridLayoutPlugin}{ColSizeClass} || "foswikiCol%n",
+      gutter =>   $Foswiki::cfg{GridLayoutPlugin}{GutterClass} || "foswikiGutter%n",
+      border =>   $Foswiki::cfg{GridLayoutPlugin}{BorderClass} || "foswikiBorder",
+    },
     border => 0,
     gutter => 4,
     insideRow => 0,
     insideCol => 0,
     rowWidth => 0,
+
     @_
   }, $class);
 
@@ -57,7 +66,10 @@ sub begin {
 
   $this->{gutter} = $gutter;
 
-  return "<div class='foswikiGrid gutter$gutter$class'$style>";
+  my $gutterClass = $this->{classes}{gutter} || '';
+  $gutterClass =~ s/%n/$gutter/g;
+
+  return "<div class='$this->{classes}{grid} $gutterClass$class'$style>";
 }
 
 sub end {
@@ -77,7 +89,7 @@ sub beginRow {
 
   my $border = Foswiki::Func::isTrue($params->{border}, $this->{border});
   $result .= '<hr />' if $border && $insideRow;
-  $result .= "<div class='foswikiRow$class'$style>";
+  $result .= "<div class='$this->{classes}{row}$class'$style>";
 
   $this->{rowWidth} = 0;
   $this->{insideRow} = 1;
@@ -108,7 +120,7 @@ sub beginCol {
     if ($width =~ /[^\d]/ || $width < 1 || $width > 12);
 
   my $class = $params->{class} ? ' '.$params->{class}:'';
-  my $border = Foswiki::Func::isTrue($params->{border}, $this->{border}) ? ' border': '';
+  my $border = Foswiki::Func::isTrue($params->{border}, $this->{border}) ? ' '.$this->{classes}{border}: '';
   my $style = $params->{style} ? " style='".$params->{style}."'":'';
 
   # close previous col
@@ -129,7 +141,10 @@ sub beginCol {
   $this->{rowWidth} += $width;
 
   $this->{insideCol} = 1;
-  $result .= "<div class='foswikiCol foswikiCol$width$border$class'$style>";
+  my $colSizeClass = $this->{classes}{colSize};
+  $colSizeClass =~ s/%n/$width/g;
+
+  $result .= "<div class='$this->{classes}{col} $colSizeClass$border$class'$style>";
 
   return $result;
 }

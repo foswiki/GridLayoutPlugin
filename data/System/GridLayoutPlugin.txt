@@ -456,6 +456,7 @@ jQuery(function($) {
 |  Release: | %$RELEASE% |
 |  Version: | %$VERSION% |
 |  Change History: | <!-- versions below in reverse order -->&nbsp; |
+|  31 Aug 2015 | css classes are configurable now |
 |  19 Feb 2015 | initial release |
 |  Dependencies: | %$DEPENDENCIES% |
 |  Home page: | Foswiki:Extensions/%TOPIC% |

@@ -45,6 +45,7 @@ sub new {
   $this->{stack} = [];
   $this->{doneCss} = 0;
 
+
   return $this;
 }
 
@@ -80,7 +81,7 @@ sub addCss {
   return if $this->{doneCss};
   $this->{doneCss} = 1;
 
-Foswiki::Func::addToZone('head', 'GRIDLAYOUT', <<HERE);
+  Foswiki::Func::addToZone('head', 'GRIDLAYOUT', <<HERE);
 <link rel='stylesheet' href='%PUBURL%/%SYSTEMWEB%/GridLayoutPlugin/grid.css' media='all' />
 HERE
 }
