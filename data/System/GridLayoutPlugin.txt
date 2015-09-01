@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="reprev" date="1424346230" format="1.1" reprev="5" version="5"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1441111214" format="1.1"  version="1"}%
 ---+!! %TOPIC%
 %SHORTDESCRIPTION%
 
@@ -78,11 +78,12 @@ All below classes are meant to be used as part of a =&lt;div class="..."> ... &l
 | *CSS* | *Description* |
 | =foswikiGrid= | the grid container; contains =foswikiRow= elements |
 | =foswikiRow= | the row container; contains =foswikiColxxx= elements |
-| =foswikiCol1=, =foswikiCol2=, =foswikiCol3=, =foswikiCol4=,%BR% \
-  =foswikiCol5=, =foswikiCol6=, =foswikiCol7=, =foswikiCol8=,%BR% \
-  =foswikiCol9=, =foswikiCol10=, =foswikiCol11=, =foswikiCol12= | column definition; contains the net content |
-| =gutter0=, =gutter1=, =gutter2=, =gutter3=, =gutter4=, =gutter5= | margin of the cells in a grid; applies to =foswikiGrid= element; by default a =gutter4= is applied to any =foswikiGrid= element |
-| =border= | draws a vertical border separating cells visually; may be applied to a =foswikiGrid=, =foswikiRow= or =foswikiCellxxx= element |
+| =foswikiCol1=, ... , =foswikiCol12= | column definition; contains the net content |
+| =foswikiGutter0=, ..., =foswikiGutter5= | margin of the cells in a grid; applies to =foswikiGrid= element; by default a =foswikiGutter4= is applied to any =foswikiGrid= element |
+| =foswikiBorder= | draws a vertical border separating cells visually; may be applied to a =foswikiGrid=, =foswikiRow= or =foswikiCellxxx= element |
+| =foswikiOffset0=, ... , =foswikiOffset12= | move a column to the right |
+| =foswikiPull0=, ... , =foswikiPull12= | changes column ordering by pulling a column to the left |
+| =foswikiPush0=, ... , =foswikiPush12= | changes column ordering by pushing a column to the right |
 
 ---++ Macros Syntax
 
@@ -115,6 +116,9 @@ Starts a new column element; closes any previous column element; closes a previo
 | border="on/off" | switch on/off borders this and the next col | the =border= value as specified in the parent =%<nop>BEGINROW%= |
 | class="..." | add a css class to the =foswikiCol= element | |
 | style="..." | add inline css styles to the =foswikiCol= element | |
+| offset="0-12" | move a column to the right adding left margin; note that this adds to the total of all widths and offsets within a row | 0 |
+| pull="0-12" | change ordering by moving a column to the left | 0 |
+| push="0-12" | change ordering by moving a column to the right | 0 |
 
 Macros =%<nop>ENDCOL%= and =%<nop>ENDROW%= are fully optional and may be specified explicitly. 
 
@@ -162,22 +166,23 @@ a grid with two rows, row one using a 4/4/4 division, row two a 3/3/3/3 division
 <div class="foswikiPageForm gutterSelector">
 *Select gutter:* 
 <select class="foswikiSelect">
-<option>gutter0</option>
-<option>gutter1</option>
-<option>gutter2</option>
-<option>gutter3</option>
-<option value="gutter4" selected>gutter4 (default)</option>
-<option>gutter5</option>
+<option value="foswikiGutter0">gutter 0</option>
+<option value="foswikiGutter1">gutter 1</option>
+<option value="foswikiGutter2">gutter 2</option>
+<option value="foswikiGutter3">gutter 3</option>
+<option value="foswikiGutter4" selected>gutter 4 (default)</option>
+<option value="foswikiGutter5">gutter 5</option>
 </select>
 </div>
 
 <literal>
 <script type="text/javascript"> 
 jQuery(function($) {
-  $(".test1 div:odd").addClass("odd");
+  $(".test1 .foswikiCol").wrapInner("<div class='cell'></div>")
+  $(".test1 .foswikiCol:odd > .cell").addClass("odd");
   $(".gutterSelector select").change(function() {
     var val = $(this).val();
-    $(".foswikiGrid").removeClass("gutter0 gutter1 gutter2 gutter3 gutter4 gutter5").addClass(val);
+    $(".foswikiGrid").removeClass("foswikiGutter0 foswikiGutter1 foswikiGutter2 foswikiGutter3 foswikiGutter4 foswikiGutter5").addClass(val);
   });
 });
 </script>
@@ -190,10 +195,10 @@ jQuery(function($) {
 .test1 .foswikiGrid .foswikiRow {
   margin-top:0;
 }
-.test1 .foswikiGrid .foswikiRow div {
+.test1 .cell {
   background-color: #FFC0CB;
 }
-.test1 .foswikiGrid .foswikiRow .odd {
+.test1 .cell.odd {
   background-color: #ADD8E6;
 }
 .test2 .foswikiGrid {
@@ -387,7 +392,49 @@ jQuery(function($) {
 %ENDGRID%
 </div>
 
----+++ Example 5: text & borders
+---+++ Example 5: offset
+<div class="test1">
+%BEGINGRID%
+%BEGINCOL{"3" offset="1"}%
+3/12
+%BEGINCOL{"3" offset="1"}%
+3/12
+%BEGINCOL{"3" offset="1"}%
+3/12
+%ENDGRID%
+</div>
+
+---+++ Example 6: changing column ordering using pull and push
+<div class="test1">
+%BEGINGRID%
+%BEGINCOL{"3" push="3"}%
+1 
+%BEGINCOL{"3" push="3"}%
+2 
+%BEGINCOL{"3" push="3"}%
+3 
+%BEGINCOL{"3" pull="9"}%
+4
+%BEGINCOL{"3" push="6"}%
+1
+%BEGINCOL{"3" push="6"}%
+2
+%BEGINCOL{"3" pull="6"}%
+3
+%BEGINCOL{"3" pull="6"}%
+4
+%BEGINCOL{"3" push="9"}%
+1
+%BEGINCOL{"3" pull="3"}%
+2
+%BEGINCOL{"3" pull="3"}%
+3
+%BEGINCOL{"3" pull="3"}%
+4
+%ENDGRID%
+</div>
+
+---+++ Example 7: text & borders
 
 <img class="screenshot" src="%ATTACHURLPATH%/GridLayoutPluginSnap3.png" width="819" height="767" />
 <div class="test2">
@@ -450,19 +497,22 @@ jQuery(function($) {
    * Set SHORTDESCRIPTION = %$SHORTDESCRIPTION%
 -->
 
-|  Author(s): | Michael Daum|
-|  Copyright: | &copy; 2015 Michael Daum http://michaeldaumconsulting.com |
-|  License: | [[http://www.gnu.org/licenses/gpl.html][GPL (Gnu General Public License)]] |
-|  Release: | %$RELEASE% |
-|  Version: | %$VERSION% |
 |  Change History: | <!-- versions below in reverse order -->&nbsp; |
+|  01 Sep 2015 | make grid system symetric; add features "offset", "push", "pull" |
 |  31 Aug 2015 | css classes are configurable now |
 |  19 Feb 2015 | initial release |
 |  Dependencies: | %$DEPENDENCIES% |
-|  Home page: | Foswiki:Extensions/%TOPIC% |
-|  Support: | Foswiki:Support/%TOPIC% |
 
-%META:FILEATTACHMENT{name="GridLayoutPluginSnap1-small.png" attachment="GridLayoutPluginSnap1-small.png" attr="t" comment="" date="1424345067" size="6751" user="micha" version="1"}%
-%META:FILEATTACHMENT{name="GridLayoutPluginSnap3.png" attachment="GridLayoutPluginSnap3.png" attr="" comment="" date="1424345069" size="208417" user="micha" version="1"}%
-%META:FILEATTACHMENT{name="GridLayoutPluginSnap2.png" attachment="GridLayoutPluginSnap2.png" attr="" comment="" date="1424345070" size="27447" user="micha" version="1"}%
-%META:FILEATTACHMENT{name="GridLayoutPluginSnap1.png" attachment="GridLayoutPluginSnap1.png" attr="" comment="" date="1424345072" size="12089" user="micha" version="1"}%
+%META:FORM{name="PackageForm"}%
+%META:FIELD{name="Author" title="Author" value="Michael Daum"}%
+%META:FIELD{name="Copyright" title="Copyright" value="&copy; 2015 Michael Daum http://michaeldaumconsulting.com"}%
+%META:FIELD{name="Home" title="Home" value="http://foswiki.org/Extensions/GridLayoutPlugin"}%
+%META:FIELD{name="License" title="License" value="[[http://www.gnu.org/licenses/gpl.html][GPL (Gnu General Public License)]]"}%
+%META:FIELD{name="Release" title="Release" value="%$RELEASE%"}%
+%META:FIELD{name="Repository" title="Repository" value="https://github.com/foswiki/GridLayoutPlugin"}%
+%META:FIELD{name="Support" title="Support" value="Foswiki:Support/%TOPIC%"}%
+%META:FIELD{name="Version" title="Version" value="%$VERSION%"}%
+%META:FILEATTACHMENT{name="GridLayoutPluginSnap1-small.png" attachment="GridLayoutPluginSnap1-small.png" attr="t" comment="" date="1441111214" size="6751" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="GridLayoutPluginSnap3.png" attachment="GridLayoutPluginSnap3.png" attr="" comment="" date="1441111214" size="208417" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="GridLayoutPluginSnap2.png" attachment="GridLayoutPluginSnap2.png" attr="" comment="" date="1441111214" size="27447" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="GridLayoutPluginSnap1.png" attachment="GridLayoutPluginSnap1.png" attr="" comment="" date="1441111214" size="12089" user="ProjectContributor" version="1"}%

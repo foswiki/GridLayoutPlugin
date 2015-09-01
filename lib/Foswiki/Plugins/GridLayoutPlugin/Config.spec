@@ -19,6 +19,10 @@ $Foswiki:cfg{GridLayoutPlugin}{ColClass} = "foswikiCol";
 $Foswiki:cfg{GridLayoutPlugin}{ColSizeClass} = "foswikiCol%n";
 
 # **STRING**
+# CSS class to indicate the column offset; %n will be replaced with values 0-11
+$Foswiki:cfg{GridLayoutPlugin}{OffsetClass} = "foswikiOffset%n";
+
+# **STRING**
 # CSS class for the grid gutter; %n will be repalced with values 1-5 
 $Foswiki:cfg{GridLayoutPlugin}{GutterClass} = "foswikiGutter%n";
 

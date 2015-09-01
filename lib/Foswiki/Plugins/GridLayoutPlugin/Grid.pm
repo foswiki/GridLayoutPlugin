@@ -36,6 +36,9 @@ sub new {
       row =>   $Foswiki::cfg{GridLayoutPlugin}{RowClasses} || "foswikiRow",
       col =>      $Foswiki::cfg{GridLayoutPlugin}{ColClass} || "foswikiCol",
       colSize =>  $Foswiki::cfg{GridLayoutPlugin}{ColSizeClass} || "foswikiCol%n",
+      offset =>  $Foswiki::cfg{GridLayoutPlugin}{OffsetClass} || "foswikiOffset%n",
+      push =>  $Foswiki::cfg{GridLayoutPlugin}{PushClass} || "foswikiPush%n",
+      pull =>  $Foswiki::cfg{GridLayoutPlugin}{PullClass} || "foswikiPull%n",
       gutter =>   $Foswiki::cfg{GridLayoutPlugin}{GutterClass} || "foswikiGutter%n",
       border =>   $Foswiki::cfg{GridLayoutPlugin}{BorderClass} || "foswikiBorder",
     },
@@ -113,8 +116,13 @@ sub endRow {
 sub beginCol {
   my ($this, $params) = @_;
 
+  my $offset = $params->{offset} || 0;
+
+  throw Error::Simple("illegal offset: $offset") 
+    if ($offset =~ /[^\d]/ || $offset < 0 || $offset > 12);
+
   my $width = $params->{_DEFAULT} || $params->{width};
-  $width = 12 - $this->{rowWidth} unless defined $width;
+  $width = 12 - $this->{rowWidth} - $offset unless defined $width;
 
   throw Error::Simple("illegal width: $width") 
     if ($width =~ /[^\d]/ || $width < 1 || $width > 12);
@@ -127,7 +135,7 @@ sub beginCol {
   my $result = $this->endCol;
 
   # auto-close previous row
-  if ($this->{rowWidth} == 12) {
+  if ($this->{rowWidth} == 12 || $this->{rowWidth} + $width + $offset > 12) {
     $result .= $this->endRow;
     $result .= '<hr />' if $border ne '';
   }
@@ -136,15 +144,36 @@ sub beginCol {
   $result .= $this->beginRow unless $this->{insideRow};
 
   # add new col
-  $width = 12 - $this->{rowWidth} if ($this->{rowWidth} + $width > 12);
+  $width = 12 - $this->{rowWidth} - $offset if ($this->{rowWidth} + $width + $offset > 12);
 
   $this->{rowWidth} += $width;
+  $this->{rowWidth} += $offset;
+
 
   $this->{insideCol} = 1;
   my $colSizeClass = $this->{classes}{colSize};
   $colSizeClass =~ s/%n/$width/g;
 
-  $result .= "<div class='$this->{classes}{col} $colSizeClass$border$class'$style>";
+  my $offsetClass = $offset?" $this->{classes}{offset}":"";
+  $offsetClass =~ s/%n/$offset/g;
+
+  my $push = $params->{push} || 0;
+
+  throw Error::Simple("illegal push: $push") 
+    if ($push =~ /[^\d]/ || $push < 0 || $push > 12);
+
+  my $pushClass = $push?" $this->{classes}{push}":"";
+  $pushClass =~ s/%n/$push/g;
+
+  my $pull = $params->{pull} || 0;
+
+  throw Error::Simple("illegal pull: $pull") 
+    if ($pull =~ /[^\d]/ || $pull < 0 || $pull > 12);
+
+  my $pullClass = $pull?" $this->{classes}{pull}":"";
+  $pullClass =~ s/%n/$pull/g;
+
+  $result .= "<div class='$this->{classes}{col} $colSizeClass$offsetClass$pushClass$pullClass$border$class'$style>";
 
   return $result;
 }
