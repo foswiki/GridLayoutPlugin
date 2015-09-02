@@ -3,13 +3,19 @@
   box-sizing:border-box;
 }
 
+.foswikiRow {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
 .foswikiCol1, .foswikiCol2, .foswikiCol3, .foswikiCol4, .foswikiCol5,
 .foswikiCol6, .foswikiCol7, .foswikiCol8, .foswikiCol9, .foswikiCol10,
 .foswikiCol11, .foswikiCol12 {
   float:left;
-  height: 100%;
   position:relative;
-  min-height:1em;
   border:0;
 }
 
@@ -98,12 +104,18 @@
 .foswikiGrid.foswikiGutter0 .foswikiCol5, .foswikiGrid.foswikiGutter0 .foswikiCol6,
 .foswikiGrid.foswikiGutter0 .foswikiCol7,.foswikiGrid.foswikiGutter0 .foswikiCol8,
 .foswikiGrid.foswikiGutter0 .foswikiCol9, .foswikiGrid.foswikiGutter0 .foswikiCol10,
-.foswikiGrid.foswikiGutter0 .foswikiCol11 {  padding-left:0%; padding-right:0%; }
-.foswikiGrid.foswikiGutter0 hr { margin-bottom:0; margin-top:0; }
-.foswikiGrid.foswikiGutter0 .foswikiRow { 
-  margin-top:0; 
-  margin-left:0; 
-  margin-right:0; 
+.foswikiGrid.foswikiGutter0 .foswikiCol11, .foswikiGrid.foswikiGutter0 .foswikiCol12 {
+  padding-left:0%;
+  padding-right:0%;
+}
+.foswikiGrid.foswikiGutter0 hr {
+  margin-bottom:0;
+  margin-top:0;
+}
+.foswikiGrid.foswikiGutter0 .foswikiRow {
+  margin-top:0;
+  margin-left:0;
+  margin-right:0;
 }
 
 /* gutter = 1 */
@@ -112,12 +124,18 @@
 .foswikiGrid.foswikiGutter1 .foswikiCol5, .foswikiGrid.foswikiGutter1 .foswikiCol6,
 .foswikiGrid.foswikiGutter1 .foswikiCol7,.foswikiGrid.foswikiGutter1 .foswikiCol8,
 .foswikiGrid.foswikiGutter1 .foswikiCol9, .foswikiGrid.foswikiGutter1 .foswikiCol10,
-.foswikiGrid.foswikiGutter1 .foswikiCol11 {  padding-left:0.5%; padding-right:0.5%; }
-.foswikiGrid.foswikiGutter1 hr { margin-top:0.3462em;margin-bottom:0.3462em;} /* 4.5px */
-.foswikiGrid.foswikiGutter1 .foswikiRow { 
-  margin-top:0.3462em; /* 4.5px */ 
-  margin-left:-0.5%; 
-  margin-right:-0.5%; 
+.foswikiGrid.foswikiGutter1 .foswikiCol11, .foswikiGrid.foswikiGutter1 .foswikiColl12 {
+  padding-left:0.5%;
+  padding-right:0.5%;
+}
+.foswikiGrid.foswikiGutter1 hr {
+  margin-top:0.3462em;
+  margin-bottom:0.3462em; /* 4.5px */
+}
+.foswikiGrid.foswikiGutter1 .foswikiRow {
+  margin-top:0.3462em; /* 4.5px */
+  margin-left:-0.5%;
+  margin-right:-0.5%;
 }
 
 /* gutter = 2 */
@@ -126,12 +144,18 @@
 .foswikiGrid.foswikiGutter2 .foswikiCol5, .foswikiGrid.foswikiGutter2 .foswikiCol6,
 .foswikiGrid.foswikiGutter2 .foswikiCol7,.foswikiGrid.foswikiGutter2 .foswikiCol8,
 .foswikiGrid.foswikiGutter2 .foswikiCol9, .foswikiGrid.foswikiGutter2 .foswikiCol10,
-.foswikiGrid.foswikiGutter2 .foswikiCol11 {  padding-left:1%; padding-right:1%; }
-.foswikiGrid.foswikiGutter2 hr { margin-top:0.6925em; margin-bottom:0.6925em;} /* 9px */
-.foswikiGrid.foswikiGutter2 .foswikiRow { 
+.foswikiGrid.foswikiGutter2 .foswikiCol11, .foswikiGrid.foswikiGutter2 .foswikiCol12 {
+  padding-left:1%;
+  padding-right:1%;
+ }
+.foswikiGrid.foswikiGutter2 hr {
+  margin-top:0.6925em;
+  margin-bottom:0.6925em; /* 9px */
+}
+.foswikiGrid.foswikiGutter2 .foswikiRow {
   margin-top:0.6925em; /* 9px */
-  margin-left:-1%; 
-  margin-right:-1%; 
+  margin-left:-1%;
+  margin-right:-1%;
 }
 
 /* gutter = 3 */
@@ -140,11 +164,17 @@
 .foswikiGrid.foswikiGutter3 .foswikiCol5, .foswikiGrid.foswikiGutter3 .foswikiCol6,
 .foswikiGrid.foswikiGutter3 .foswikiCol7,.foswikiGrid.foswikiGutter3 .foswikiCol8,
 .foswikiGrid.foswikiGutter3 .foswikiCol9, .foswikiGrid.foswikiGutter3 .foswikiCol10,
-.foswikiGrid.foswikiGutter3 .foswikiCol11 {  padding-left:1.5%; padding-right:1.5%;}
-.foswikiGrid.foswikiGutter3 hr { margin-top:1.0384em; margin-bottom:1.0384em;} /* 13.5px */
-.foswikiGrid.foswikiGutter3 .foswikiRow { 
+.foswikiGrid.foswikiGutter3 .foswikiCol11, .foswikiGrid.foswikiGutter3 .foswikiCol12 {
+  padding-left:1.5%;
+  padding-right:1.5%;
+}
+.foswikiGrid.foswikiGutter3 hr {
+  margin-top:1.0384em;
+  margin-bottom:1.0384em; /* 13.5px */
+}
+.foswikiGrid.foswikiGutter3 .foswikiRow {
   margin-top:1.0384em; /* 13.5px */
-  margin-left:-1.5%; margin-right:-1.5%; 
+  margin-left:-1.5%; margin-right:-1.5%;
 }
 
 /* gutter = 4 */
@@ -153,10 +183,13 @@
 .foswikiGrid .foswikiCol5, .foswikiGrid .foswikiCol6,
 .foswikiGrid .foswikiCol7,.foswikiGrid .foswikiCol8,
 .foswikiGrid .foswikiCol9, .foswikiGrid .foswikiCol10,
-.foswikiGrid .foswikiCol11 {  padding-left:2%; padding-right:2% }
-.foswikiGrid.foswikiGutter4 .foswikiRow { 
-  margin-left:-2%; 
-  margin-right:-2%; 
+.foswikiGrid .foswikiCol11, .foswikiGrid .foswikiCol12 {
+  padding-left:2%;
+  padding-right:2%
+}
+.foswikiGrid.foswikiGutter4 .foswikiRow {
+  margin-left:-2%;
+  margin-right:-2%;
 }
 
 /* gutter = 5 */
@@ -165,12 +198,18 @@
 .foswikiGrid.foswikiGutter5 .foswikiCol5, .foswikiGrid.foswikiGutter5 .foswikiCol6,
 .foswikiGrid.foswikiGutter5 .foswikiCol7,.foswikiGrid.foswikiGutter5 .foswikiCol8,
 .foswikiGrid.foswikiGutter5 .foswikiCol9, .foswikiGrid.foswikiGutter5 .foswikiCol10,
-.foswikiGrid.foswikiGutter5 .foswikiCol11 {  padding-left:2.5%; padding-right:2.5%; }
-.foswikiGrid.foswikiGutter5 hr { margin-top:1.7307em; margin-bottom:1.7307em; } /* 22.5px */
-.foswikiGrid.foswikiGutter5 .foswikiRow { 
+.foswikiGrid.foswikiGutter5 .foswikiCol11 .foswikiGrid.foswikiGutter5 .foswikiCol12 {
+  padding-left:2.5%;
+  padding-right:2.5%;
+}
+.foswikiGrid.foswikiGutter5 hr {
+  margin-top:1.7307em;
+  margin-bottom:1.7307em;  /* 22.5px */
+}
+.foswikiGrid.foswikiGutter5 .foswikiRow {
   margin-top:1.7307em;  /* 22.5px */
-  margin-left:-2.5%; 
-  margin-right:-2.5%; 
+  margin-left:-2.5%;
+  margin-right:-2.5%;
 }
 
 .foswikiRow:first-child {
@@ -228,12 +267,12 @@
     width:100% !important;
     padding-left:0 !important;
     padding-right:0 !important;
-    min-height:0;
     margin:1.385em 0 0 0 !important;
   }
   .foswikiGrid .foswikiRow {
-    margin-left:0;
-    margin-right:0;
+    margin-left:0 !important;
+    margin-right:0 !important;
+    display:block;
   }
   .foswikiGrid .foswikiBorder {
     border-left-width:0;
