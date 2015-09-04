@@ -497,11 +497,14 @@ jQuery(function($) {
    * Set SHORTDESCRIPTION = %$SHORTDESCRIPTION%
 -->
 
-|  Change History: | <!-- versions below in reverse order -->&nbsp; |
+---++  Dependencies
+%$DEPENDENCIES% 
+
+---++  Change History
 |  01 Sep 2015 | make grid system symetric; add features "offset", "push", "pull" |
 |  31 Aug 2015 | css classes are configurable now |
 |  19 Feb 2015 | initial release |
-|  Dependencies: | %$DEPENDENCIES% |
+
 
 %META:FORM{name="PackageForm"}%
 %META:FIELD{name="Author" title="Author" value="Michael Daum"}%

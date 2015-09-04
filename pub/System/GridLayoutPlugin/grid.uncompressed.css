@@ -198,7 +198,7 @@
 .foswikiGrid.foswikiGutter5 .foswikiCol5, .foswikiGrid.foswikiGutter5 .foswikiCol6,
 .foswikiGrid.foswikiGutter5 .foswikiCol7,.foswikiGrid.foswikiGutter5 .foswikiCol8,
 .foswikiGrid.foswikiGutter5 .foswikiCol9, .foswikiGrid.foswikiGutter5 .foswikiCol10,
-.foswikiGrid.foswikiGutter5 .foswikiCol11 .foswikiGrid.foswikiGutter5 .foswikiCol12 {
+.foswikiGrid.foswikiGutter5 .foswikiCol11, .foswikiGrid.foswikiGutter5 .foswikiCol12 {
   padding-left:2.5%;
   padding-right:2.5%;
 }
