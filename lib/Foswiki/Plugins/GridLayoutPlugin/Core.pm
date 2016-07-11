@@ -1,6 +1,6 @@
 # Plugin for Foswiki - The Free and Open Source Wiki, http://foswiki.org/
 #
-# GridLayoutPlugin is Copyright (C) 2015 Michael Daum http://michaeldaumconsulting.com
+# GridLayoutPlugin is Copyright (C) 2015-2016 Michael Daum http://michaeldaumconsulting.com
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -82,7 +82,7 @@ sub addCss {
   $this->{doneCss} = 1;
 
   Foswiki::Func::addToZone('head', 'GRIDLAYOUT', <<HERE);
-<link rel='stylesheet' href='%PUBURL%/%SYSTEMWEB%/GridLayoutPlugin/grid.css' media='all' />
+<link rel='stylesheet' href='%PUBURLPATH%/%SYSTEMWEB%/GridLayoutPlugin/grid.css' media='all' />
 HERE
 }
 

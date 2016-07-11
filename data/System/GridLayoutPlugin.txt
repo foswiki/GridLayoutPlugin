@@ -1,6 +1,6 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1441111214" format="1.1"  version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1441111214" format="1.1" version="1"}%
 ---+!! %TOPIC%
-%SHORTDESCRIPTION%
+%FORMFIELD{"Description"}%
 
 %TOC%
 
@@ -492,30 +492,27 @@ jQuery(function($) {
 
 %$INSTALL_INSTRUCTIONS%
 
----++ Info
-<!--
-   * Set SHORTDESCRIPTION = %$SHORTDESCRIPTION%
--->
-
 ---++  Dependencies
 %$DEPENDENCIES% 
 
 ---++  Change History
+|  11 Jul 2016 | minor css fixes for flexbox browser prefixes |
 |  01 Sep 2015 | make grid system symetric; add features "offset", "push", "pull" |
 |  31 Aug 2015 | css classes are configurable now |
 |  19 Feb 2015 | initial release |
 
 
+%META:FILEATTACHMENT{name="GridLayoutPluginSnap1-small.png" attachment="GridLayoutPluginSnap1-small.png" attr="t" comment="" date="1441111214" size="6751" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="GridLayoutPluginSnap3.png" attachment="GridLayoutPluginSnap3.png" attr="" comment="" date="1441111214" size="208417" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="GridLayoutPluginSnap2.png" attachment="GridLayoutPluginSnap2.png" attr="" comment="" date="1441111214" size="27447" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="GridLayoutPluginSnap1.png" attachment="GridLayoutPluginSnap1.png" attr="" comment="" date="1441111214" size="12089" user="ProjectContributor" version="1"}%
 %META:FORM{name="PackageForm"}%
 %META:FIELD{name="Author" title="Author" value="Michael Daum"}%
-%META:FIELD{name="Copyright" title="Copyright" value="&copy; 2015 Michael Daum http://michaeldaumconsulting.com"}%
-%META:FIELD{name="Home" title="Home" value="http://foswiki.org/Extensions/GridLayoutPlugin"}%
+%META:FIELD{name="Copyright" title="Copyright" value="&copy; 2015-2016 Michael Daum http://michaeldaumconsulting.com"}%
+%META:FIELD{name="Description" title="Description" value="%25$SHORTDESCRIPTION%25"}%
+%META:FIELD{name="Home" title="Home" value="https://foswiki.org/Extensions/GridLayoutPlugin"}%
 %META:FIELD{name="License" title="License" value="[[http://www.gnu.org/licenses/gpl.html][GPL (Gnu General Public License)]]"}%
 %META:FIELD{name="Release" title="Release" value="%$RELEASE%"}%
 %META:FIELD{name="Repository" title="Repository" value="https://github.com/foswiki/GridLayoutPlugin"}%
 %META:FIELD{name="Support" title="Support" value="Foswiki:Support/%TOPIC%"}%
 %META:FIELD{name="Version" title="Version" value="%$VERSION%"}%
-%META:FILEATTACHMENT{name="GridLayoutPluginSnap1-small.png" attachment="GridLayoutPluginSnap1-small.png" attr="t" comment="" date="1441111214" size="6751" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="GridLayoutPluginSnap3.png" attachment="GridLayoutPluginSnap3.png" attr="" comment="" date="1441111214" size="208417" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="GridLayoutPluginSnap2.png" attachment="GridLayoutPluginSnap2.png" attr="" comment="" date="1441111214" size="27447" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="GridLayoutPluginSnap1.png" attachment="GridLayoutPluginSnap1.png" attr="" comment="" date="1441111214" size="12089" user="ProjectContributor" version="1"}%

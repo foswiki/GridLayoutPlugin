@@ -3,10 +3,10 @@
 igp_*
 *.swp
 pub/System/GridLayoutPlugin/grid.css
-GridLayoutPlugin.md5
-GridLayoutPlugin.sha1
-GridLayoutPlugin.tgz
-GridLayoutPlugin.txt
-GridLayoutPlugin.zip
-GridLayoutPlugin_installer
-GridLayoutPlugin_installer.pl
+/GridLayoutPlugin.md5
+/GridLayoutPlugin.sha1
+/GridLayoutPlugin.tgz
+/GridLayoutPlugin.txt
+/GridLayoutPlugin.zip
+/GridLayoutPlugin_installer
+/GridLayoutPlugin_installer.pl
