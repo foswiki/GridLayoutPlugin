@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1441111214" format="1.1" version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1485526855" format="1.1"  version="1"}%
 ---+!! %TOPIC%
 %FORMFIELD{"Description"}%
 
@@ -175,17 +175,17 @@ a grid with two rows, row one using a 4/4/4 division, row two a 3/3/3/3 division
 </select>
 </div>
 
-<literal>
-<script type="text/javascript"> 
+%ADDTOZONE{"script" id="%TOPIC%" text="<script type='text/javascript'> 
 jQuery(function($) {
-  $(".test1 .foswikiCol").wrapInner("<div class='cell'></div>")
-  $(".test1 .foswikiCol:odd > .cell").addClass("odd");
-  $(".gutterSelector select").change(function() {
+  $('.test1 .foswikiCol').wrapInner(\"<div class='cell'></div>\")
+  $('.test1 .foswikiCol:odd > .cell').addClass('odd');
+  $('.gutterSelector select').change(function() {
     var val = $(this).val();
-    $(".foswikiGrid").removeClass("foswikiGutter0 foswikiGutter1 foswikiGutter2 foswikiGutter3 foswikiGutter4 foswikiGutter5").addClass(val);
+    $('.foswikiGrid').removeClass('foswikiGutter0 foswikiGutter1 foswikiGutter2 foswikiGutter3 foswikiGutter4 foswikiGutter5').addClass(val);
   });
 });
-</script>
+</script>"}%
+<literal>
 <style>
 .test1 .foswikiGrid {
   text-align: center;
@@ -496,23 +496,24 @@ jQuery(function($) {
 %$DEPENDENCIES% 
 
 ---++  Change History
+|  27 Jan 2017 | use all paddings and margins to percentage; better support for sub-grids |
 |  11 Jul 2016 | minor css fixes for flexbox browser prefixes |
 |  01 Sep 2015 | make grid system symetric; add features "offset", "push", "pull" |
 |  31 Aug 2015 | css classes are configurable now |
 |  19 Feb 2015 | initial release |
 
 
-%META:FILEATTACHMENT{name="GridLayoutPluginSnap1-small.png" attachment="GridLayoutPluginSnap1-small.png" attr="t" comment="" date="1441111214" size="6751" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="GridLayoutPluginSnap3.png" attachment="GridLayoutPluginSnap3.png" attr="" comment="" date="1441111214" size="208417" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="GridLayoutPluginSnap2.png" attachment="GridLayoutPluginSnap2.png" attr="" comment="" date="1441111214" size="27447" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="GridLayoutPluginSnap1.png" attachment="GridLayoutPluginSnap1.png" attr="" comment="" date="1441111214" size="12089" user="ProjectContributor" version="1"}%
 %META:FORM{name="PackageForm"}%
 %META:FIELD{name="Author" title="Author" value="Michael Daum"}%
-%META:FIELD{name="Copyright" title="Copyright" value="&copy; 2015-2016 Michael Daum http://michaeldaumconsulting.com"}%
+%META:FIELD{name="Version" title="Version" value="%25$VERSION%25"}%
+%META:FIELD{name="Release" title="Release" value="%25$RELEASE%25"}%
 %META:FIELD{name="Description" title="Description" value="%25$SHORTDESCRIPTION%25"}%
-%META:FIELD{name="Home" title="Home" value="https://foswiki.org/Extensions/GridLayoutPlugin"}%
-%META:FIELD{name="License" title="License" value="[[http://www.gnu.org/licenses/gpl.html][GPL (Gnu General Public License)]]"}%
-%META:FIELD{name="Release" title="Release" value="%$RELEASE%"}%
 %META:FIELD{name="Repository" title="Repository" value="https://github.com/foswiki/GridLayoutPlugin"}%
-%META:FIELD{name="Support" title="Support" value="Foswiki:Support/%TOPIC%"}%
-%META:FIELD{name="Version" title="Version" value="%$VERSION%"}%
+%META:FIELD{name="Copyright" title="Copyright" value="&copy; 2015-2017 Michael Daum http://michaeldaumconsulting.com"}%
+%META:FIELD{name="License" title="License" value="[[http://www.gnu.org/licenses/gpl.html][GPL (Gnu General Public License)]]"}%
+%META:FIELD{name="Home" title="Home" value="https://foswiki.org/Extensions/GridLayoutPlugin"}%
+%META:FIELD{name="Support" title="Support" value="Foswiki:Support/%25TOPIC%25"}%
+%META:FILEATTACHMENT{name="GridLayoutPluginSnap1-small.png" attachment="GridLayoutPluginSnap1-small.png" attr="t" comment="" date="1485526855" size="6751" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="GridLayoutPluginSnap3.png" attachment="GridLayoutPluginSnap3.png" attr="" comment="" date="1485526855" size="208417" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="GridLayoutPluginSnap2.png" attachment="GridLayoutPluginSnap2.png" attr="" comment="" date="1485526855" size="27447" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="GridLayoutPluginSnap1.png" attachment="GridLayoutPluginSnap1.png" attr="" comment="" date="1485526855" size="12089" user="ProjectContributor" version="1"}%

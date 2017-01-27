@@ -1,6 +1,6 @@
 # Plugin for Foswiki - The Free and Open Source Wiki, http://foswiki.org/
 #
-# GridLayoutPlugin is Copyright (C) 2015-2016 Michael Daum http://michaeldaumconsulting.com
+# GridLayoutPlugin is Copyright (C) 2015-2017 Michael Daum http://michaeldaumconsulting.com
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -20,8 +20,8 @@ use warnings;
 
 use Foswiki::Func ();
 
-our $VERSION = '3.04';
-our $RELEASE = '11 Jul 2016';
+our $VERSION = '3.10';
+our $RELEASE = '27 Jan 2017';
 our $SHORTDESCRIPTION = 'A 12er grid system for responsive layouts';
 our $NO_PREFS_IN_TOPIC = 1;
 our $core;
