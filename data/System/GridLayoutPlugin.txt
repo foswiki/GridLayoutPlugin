@@ -496,6 +496,7 @@ jQuery(function($) {
 %$DEPENDENCIES% 
 
 ---++  Change History
+|  30 Jan 2017 | fixed media query for responsiveness |
 |  27 Jan 2017 | use all paddings and margins to percentage; better support for sub-grids |
 |  11 Jul 2016 | minor css fixes for flexbox browser prefixes |
 |  01 Sep 2015 | make grid system symetric; add features "offset", "push", "pull" |

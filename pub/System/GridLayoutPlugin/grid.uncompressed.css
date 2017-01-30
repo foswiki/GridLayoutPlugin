@@ -316,7 +316,7 @@
     padding-right:0 !important;
     margin:1.385em 0 0 0 !important;
   }
-  .foswikiGrid > .foswikiRow > .foswikiRow {
+  .foswikiGrid > .foswikiRow {
     margin-left:0 !important;
     margin-right:0 !important;
     display:block;
