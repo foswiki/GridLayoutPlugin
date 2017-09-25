@@ -1,3 +1,4 @@
+!noci
 data/System/GridLayoutPlugin.txt 0644
 lib/Foswiki/Plugins/GridLayoutPlugin/Config.spec 0644
 lib/Foswiki/Plugins/GridLayoutPlugin/Core.pm 0644

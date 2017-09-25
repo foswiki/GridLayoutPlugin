@@ -11,81 +11,7 @@ A grid is a set of HTML div elements that are styled in a way to arrange content
 You may either use its CSS directly to craft grid layouts or use its macros to
 ease the process of creating the relevant DIV elements.
 
----++ Understading the CSS
-
-The grid, its rows and cells are all flagged using appropriate CSS class that specifies the configuration of the grid. More specifically a "grid"
-is made up of "rows" and each row consists of "cells". A row may have up to 12 cells. All cells in a row have to "add up to 12".
-
-<verbatim class="html">
-<div class="foswikiGrid">
-   <div class="foswikiRow">
-      <div class="foswikiCol6">
-
-         <!-- content content content -->
-
-      </div>
-      <div class="foswikiCol3">
-
-         <!-- content content content -->
-
-      </div>
-      <div class="foswikiCol3">
-
-         <!-- content content content -->
-
-       </div>
-   </div> <!-- end of first row -->
----
-   <div class="foswikiRow">
-      <div class="foswikiCol4">
-
-         <!-- content content content -->
-
-      </div>
-      <div class="foswikiCol4">
-
-         <!-- content content content -->
-
-      </div>
-      <div class="foswikiCol4">
-
-         <!-- content content content -->
-      </div>
-   </div> <!-- end of second row -->
-</div> <!-- end of grid -->
-</verbatim>
-
-Note that the numbers of all =foswikiColxxx= elements add up to 12 (6+3+3=12, 4+4+4=12). You may divide a row by any possible decomposition of 12.
-Further note that content is only supposed to be placed inside the =foswikiColxxx= elements. The only exception is a =&lt;hr>= element (produced by ---)
-to draw a border separating grid rows visually.
-
-Grids might also be nested to further subdivide cells with yet another grid element inside.
-
-Note further that you will need to load the =grid.css= manually to make use of the CSS classes by adding below line anywhere to the page:
-
-<verbatim class="tml">
-%ADDTOZONE{
-   "head" 
-   id="GRIDLAYOUT" 
-   text="<link rel='stylesheet' href='%PUBURL%/%SYSTEMWEB%/GridLayoutPlugin/grid.css' media='all' />"
-}%
-</verbatim>
-
----+++ Class list
-
-All below classes are meant to be used as part of a =&lt;div class="..."> ... &lt;/div>= HTML element.
-
-| *CSS* | *Description* |
-| =foswikiGrid= | the grid container; contains =foswikiRow= elements |
-| =foswikiRow= | the row container; contains =foswikiColxxx= elements |
-| =foswikiCol1=, ... , =foswikiCol12= | column definition; contains the net content |
-| =foswikiGutter0=, ..., =foswikiGutter5= | margin of the cells in a grid; applies to =foswikiGrid= element; by default a =foswikiGutter4= is applied to any =foswikiGrid= element |
-| =foswikiBorder= | draws a vertical border separating cells visually; may be applied to a =foswikiGrid=, =foswikiRow= or =foswikiCellxxx= element |
-| =foswikiOffset0=, ... , =foswikiOffset12= | move a column to the right |
-| =foswikiPull0=, ... , =foswikiPull12= | changes column ordering by pulling a column to the left |
-| =foswikiPush0=, ... , =foswikiPush12= | changes column ordering by pushing a column to the right |
-
----++ Macros Syntax
+---++ Syntax
 
 =%<nop>BEGINGRID{...}%=
 
@@ -488,6 +414,80 @@ jQuery(function($) {
 </div>
 </div>
 
+---++ DOM and CSS
+
+The grid, its rows and cells are all flagged using appropriate CSS class that specifies the configuration of the grid. More specifically a "grid"
+is made up of "rows" and each row consists of "cells". A row may have up to 12 cells. All cells in a row have to "add up to 12".
+
+<verbatim class="html">
+<div class="foswikiGrid">
+   <div class="foswikiRow">
+      <div class="foswikiCol6">
+
+         <!-- content content content -->
+
+      </div>
+      <div class="foswikiCol3">
+
+         <!-- content content content -->
+
+      </div>
+      <div class="foswikiCol3">
+
+         <!-- content content content -->
+
+       </div>
+   </div> <!-- end of first row -->
+---
+   <div class="foswikiRow">
+      <div class="foswikiCol4">
+
+         <!-- content content content -->
+
+      </div>
+      <div class="foswikiCol4">
+
+         <!-- content content content -->
+
+      </div>
+      <div class="foswikiCol4">
+
+         <!-- content content content -->
+      </div>
+   </div> <!-- end of second row -->
+</div> <!-- end of grid -->
+</verbatim>
+
+Note that the numbers of all =foswikiColxxx= elements add up to 12 (6+3+3=12, 4+4+4=12). You may divide a row by any possible decomposition of 12.
+Further note that content is only supposed to be placed inside the =foswikiColxxx= elements. The only exception is a =&lt;hr>= element (produced by ---)
+to draw a border separating grid rows visually.
+
+Grids might also be nested to further subdivide cells with yet another grid element inside.
+
+Note further that you will need to load the =grid.css= manually to make use of the CSS classes by adding below line anywhere to the page:
+
+<verbatim class="tml">
+%ADDTOZONE{
+   "head" 
+   id="GRIDLAYOUT" 
+   text="<link rel='stylesheet' href='%PUBURL%/%SYSTEMWEB%/GridLayoutPlugin/grid.css' media='all' />"
+}%
+</verbatim>
+
+---+++ Class list
+
+All below classes are meant to be used as part of a =&lt;div class="..."> ... &lt;/div>= HTML element.
+
+| *CSS* | *Description* |
+| =foswikiGrid= | the grid container; contains =foswikiRow= elements |
+| =foswikiRow= | the row container; contains =foswikiColxxx= elements |
+| =foswikiCol1=, ... , =foswikiCol12= | column definition; contains the net content |
+| =foswikiGutter0=, ..., =foswikiGutter5= | margin of the cells in a grid; applies to =foswikiGrid= element; by default a =foswikiGutter4= is applied to any =foswikiGrid= element |
+| =foswikiBorder= | draws a vertical border separating cells visually; may be applied to a =foswikiGrid=, =foswikiRow= or =foswikiCellxxx= element |
+| =foswikiOffset0=, ... , =foswikiOffset12= | move a column to the right |
+| =foswikiPull0=, ... , =foswikiPull12= | changes column ordering by pulling a column to the left |
+| =foswikiPush0=, ... , =foswikiPush12= | changes column ordering by pushing a column to the right |
+
 ---++ Installation Instructions
 
 %$INSTALL_INSTRUCTIONS%
@@ -496,6 +496,8 @@ jQuery(function($) {
 %$DEPENDENCIES% 
 
 ---++  Change History
+%TABLE{columnwidths="7em" tablewidth="100%"}%
+|  25 Sep 2017 | proper clearfix and borer of columns all being laid out verticaly on mobile devices |
 |  30 Jan 2017 | fixed media query for responsiveness |
 |  27 Jan 2017 | use all paddings and margins to percentage; better support for sub-grids |
 |  11 Jul 2016 | minor css fixes for flexbox browser prefixes |

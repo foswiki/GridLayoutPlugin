@@ -22,19 +22,6 @@ use Foswiki::Func ();
 use Error qw(:try);
 use Foswiki::Plugins::GridLayoutPlugin::Grid ();
 
-use constant TRACE => 0; # toggle me
-
-sub writeDebug {
-  Foswiki::Func::writeDebug("GridLayoutPlugin::Core - $_[0]") if TRACE;
-}
-
-sub inlineError {
-  my $msg = shift;
-
-  $msg =~ s/ at .*$//;
-  return "<div class='foswikiAlert'>$msg</div>";
-}
-
 sub new {
   my $class = shift;
 
@@ -98,7 +85,7 @@ sub BEGINGRID {
     $this->pushGrid($grid);
     $result = $grid->begin($params);
   } catch Error::Simple with {
-    $result = inlineError(shift);
+    $result = _inlineError(shift);
   };
 
   return $result,
@@ -112,7 +99,7 @@ sub ENDGRID {
   try {
     $result = $this->popGrid->end;
   } catch Error::Simple with {
-    $result = inlineError(shift);
+    $result = _inlineError(shift);
   };
 
   return $result,
@@ -126,7 +113,7 @@ sub BEGINROW {
   try {
     $result = $this->currentGrid->beginRow($params);
   } catch Error::Simple with {
-    $result = inlineError(shift);
+    $result = _inlineError(shift);
   };
 
   return $result;
@@ -140,7 +127,7 @@ sub ENDROW {
   try {
     $result = $this->currentGrid->endRow;
   } catch Error::Simple with {
-    $result = inlineError(shift);
+    $result = _inlineError(shift);
   };
 
   return $result;
@@ -154,7 +141,7 @@ sub BEGINCOL {
   try {
     $result = $this->currentGrid->beginCol($params);
   } catch Error::Simple with {
-    $result = inlineError(shift);
+    $result = _inlineError(shift);
   };
 
   return $result;
@@ -168,10 +155,18 @@ sub ENDCOL {
   try {
     $result = $this->currentGrid->endCol;
   } catch Error::Simple with {
-    $result = inlineError(shift);
+    $result = _inlineError(shift);
   };
 
   return $result;
 }
+
+sub _inlineError {
+  my $msg = shift;
+
+  $msg =~ s/ at .*$//;
+  return "<div class='foswikiAlert'>$msg</div>";
+}
+
 
 1;

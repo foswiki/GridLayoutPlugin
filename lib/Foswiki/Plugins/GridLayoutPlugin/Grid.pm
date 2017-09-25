@@ -21,12 +21,6 @@ use warnings;
 use Foswiki::Func ();
 use Error qw(:try);
 
-use constant TRACE => 0; # toggle me
-
-sub writeDebug {
-  Foswiki::Func::writeDebug("GridLayoutPlugin::Grid - $_[0]") if TRACE;
-}
-
 sub new {
   my $class = shift;
 
@@ -123,6 +117,7 @@ sub beginCol {
 
   my $width = $params->{_DEFAULT} || $params->{width};
   $width = 12 - $this->{rowWidth} - $offset unless defined $width;
+  $width = 12 if $width == 0;
 
   throw Error::Simple("illegal width: $width") 
     if ($width =~ /[^\d]/ || $width < 1 || $width > 12);
