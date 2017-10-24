@@ -497,6 +497,7 @@ All below classes are meant to be used as part of a =&lt;div class="..."> ... &l
 
 ---++  Change History
 %TABLE{columnwidths="7em" tablewidth="100%"}%
+|  24 Oct 2017 | use different margins on mobile devices depending on the gutter size |
 |  25 Sep 2017 | proper clearfix and borer of columns all being laid out verticaly on mobile devices |
 |  30 Jan 2017 | fixed media query for responsiveness |
 |  27 Jan 2017 | use all paddings and margins to percentage; better support for sub-grids |

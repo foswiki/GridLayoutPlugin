@@ -20,8 +20,8 @@ use warnings;
 
 use Foswiki::Func ();
 
-our $VERSION = '3.20';
-our $RELEASE = '25 Sep 2017';
+our $VERSION = '3.30';
+our $RELEASE = '24 Oct 2017';
 our $SHORTDESCRIPTION = 'A 12er grid system for responsive layouts';
 our $NO_PREFS_IN_TOPIC = 1;
 our $core;

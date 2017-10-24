@@ -314,7 +314,90 @@
     width:100% !important;
     padding-left:0 !important;
     padding-right:0 !important;
-    margin:1.385em 0 0 0 !important;
+  }
+  .foswikiGrid.foswikiGutter0 > .foswikiRow > .foswikiCol1,
+  .foswikiGrid.foswikiGutter0 > .foswikiRow > .foswikiCol2,
+  .foswikiGrid.foswikiGutter0 > .foswikiRow > .foswikiCol3,
+  .foswikiGrid.foswikiGutter0 > .foswikiRow > .foswikiCol4,
+  .foswikiGrid.foswikiGutter0 > .foswikiRow > .foswikiCol5,
+  .foswikiGrid.foswikiGutter0 > .foswikiRow > .foswikiCol6,
+  .foswikiGrid.foswikiGutter0 > .foswikiRow > .foswikiCol7,
+  .foswikiGrid.foswikiGutter0 > .foswikiRow > .foswikiCol8,
+  .foswikiGrid.foswikiGutter0 > .foswikiRow > .foswikiCol9,
+  .foswikiGrid.foswikiGutter0 > .foswikiRow > .foswikiCol10,
+  .foswikiGrid.foswikiGutter0 > .foswikiRow > .foswikiCol11,
+  .foswikiGrid.foswikiGutter0 > .foswikiRow > .foswikiCol12 {
+    margin:0 !important;
+  }
+  .foswikiGrid.foswikiGutter1 > .foswikiRow > .foswikiCol1,
+  .foswikiGrid.foswikiGutter1 > .foswikiRow > .foswikiCol2,
+  .foswikiGrid.foswikiGutter1 > .foswikiRow > .foswikiCol3,
+  .foswikiGrid.foswikiGutter1 > .foswikiRow > .foswikiCol4,
+  .foswikiGrid.foswikiGutter1 > .foswikiRow > .foswikiCol5,
+  .foswikiGrid.foswikiGutter1 > .foswikiRow > .foswikiCol6,
+  .foswikiGrid.foswikiGutter1 > .foswikiRow > .foswikiCol7,
+  .foswikiGrid.foswikiGutter1 > .foswikiRow > .foswikiCol8,
+  .foswikiGrid.foswikiGutter1 > .foswikiRow > .foswikiCol9,
+  .foswikiGrid.foswikiGutter1 > .foswikiRow > .foswikiCol10,
+  .foswikiGrid.foswikiGutter1 > .foswikiRow > .foswikiCol11,
+  .foswikiGrid.foswikiGutter1 > .foswikiRow > .foswikiCol12 {
+    margin:0.5% 0 0 0 !important;
+  }
+  .foswikiGrid.foswikiGutter2 > .foswikiRow > .foswikiCol1,
+  .foswikiGrid.foswikiGutter2 > .foswikiRow > .foswikiCol2,
+  .foswikiGrid.foswikiGutter2 > .foswikiRow > .foswikiCol3,
+  .foswikiGrid.foswikiGutter2 > .foswikiRow > .foswikiCol4,
+  .foswikiGrid.foswikiGutter2 > .foswikiRow > .foswikiCol5,
+  .foswikiGrid.foswikiGutter2 > .foswikiRow > .foswikiCol6,
+  .foswikiGrid.foswikiGutter2 > .foswikiRow > .foswikiCol7,
+  .foswikiGrid.foswikiGutter2 > .foswikiRow > .foswikiCol8,
+  .foswikiGrid.foswikiGutter2 > .foswikiRow > .foswikiCol9,
+  .foswikiGrid.foswikiGutter2 > .foswikiRow > .foswikiCol10,
+  .foswikiGrid.foswikiGutter2 > .foswikiRow > .foswikiCol11,
+  .foswikiGrid.foswikiGutter2 > .foswikiRow > .foswikiCol12 {
+    margin:1% 0 0 0 !important;
+  }
+  .foswikiGrid.foswikiGutter3 > .foswikiRow > .foswikiCol1,
+  .foswikiGrid.foswikiGutter3 > .foswikiRow > .foswikiCol2,
+  .foswikiGrid.foswikiGutter3 > .foswikiRow > .foswikiCol3,
+  .foswikiGrid.foswikiGutter3 > .foswikiRow > .foswikiCol4,
+  .foswikiGrid.foswikiGutter3 > .foswikiRow > .foswikiCol5,
+  .foswikiGrid.foswikiGutter3 > .foswikiRow > .foswikiCol6,
+  .foswikiGrid.foswikiGutter3 > .foswikiRow > .foswikiCol7,
+  .foswikiGrid.foswikiGutter3 > .foswikiRow > .foswikiCol8,
+  .foswikiGrid.foswikiGutter3 > .foswikiRow > .foswikiCol9,
+  .foswikiGrid.foswikiGutter3 > .foswikiRow > .foswikiCol10,
+  .foswikiGrid.foswikiGutter3 > .foswikiRow > .foswikiCol11,
+  .foswikiGrid.foswikiGutter3 > .foswikiRow > .foswikiCol12 {
+    margin:1.5% 0 0 0 !important;
+  }
+  .foswikiGrid.foswikiGutter4 > .foswikiRow > .foswikiCol1,
+  .foswikiGrid.foswikiGutter4 > .foswikiRow > .foswikiCol2,
+  .foswikiGrid.foswikiGutter4 > .foswikiRow > .foswikiCol3,
+  .foswikiGrid.foswikiGutter4 > .foswikiRow > .foswikiCol4,
+  .foswikiGrid.foswikiGutter4 > .foswikiRow > .foswikiCol5,
+  .foswikiGrid.foswikiGutter4 > .foswikiRow > .foswikiCol6,
+  .foswikiGrid.foswikiGutter4 > .foswikiRow > .foswikiCol7,
+  .foswikiGrid.foswikiGutter4 > .foswikiRow > .foswikiCol8,
+  .foswikiGrid.foswikiGutter4 > .foswikiRow > .foswikiCol9,
+  .foswikiGrid.foswikiGutter4 > .foswikiRow > .foswikiCol10,
+  .foswikiGrid.foswikiGutter4 > .foswikiRow > .foswikiCol11,
+  .foswikiGrid.foswikiGutter4 > .foswikiRow > .foswikiCol12 {
+    margin:2% 0 0 0 !important;
+  }
+  .foswikiGrid.foswikiGutter5 > .foswikiRow > .foswikiCol1,
+  .foswikiGrid.foswikiGutter5 > .foswikiRow > .foswikiCol2,
+  .foswikiGrid.foswikiGutter5 > .foswikiRow > .foswikiCol3,
+  .foswikiGrid.foswikiGutter5 > .foswikiRow > .foswikiCol4,
+  .foswikiGrid.foswikiGutter5 > .foswikiRow > .foswikiCol5,
+  .foswikiGrid.foswikiGutter5 > .foswikiRow > .foswikiCol6,
+  .foswikiGrid.foswikiGutter5 > .foswikiRow > .foswikiCol7,
+  .foswikiGrid.foswikiGutter5 > .foswikiRow > .foswikiCol8,
+  .foswikiGrid.foswikiGutter5 > .foswikiRow > .foswikiCol9,
+  .foswikiGrid.foswikiGutter5 > .foswikiRow > .foswikiCol10,
+  .foswikiGrid.foswikiGutter5 > .foswikiRow > .foswikiCol11,
+  .foswikiGrid.foswikiGutter5 > .foswikiRow > .foswikiCol12 {
+    margin:2.5% 0 0 0 !important;
   }
   .foswikiCol:after {
     clear: both;
