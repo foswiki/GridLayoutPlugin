@@ -50,7 +50,6 @@
 }
 
 /* clear */
-.foswikiGrid:before,
 .foswikiGrid:after,
 .foswikiRow:after {
   clear: both;

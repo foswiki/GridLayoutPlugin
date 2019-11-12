@@ -1,6 +1,6 @@
 # Plugin for Foswiki - The Free and Open Source Wiki, http://foswiki.org/
 #
-# GridLayoutPlugin is Copyright (C) 2015-2017 Michael Daum http://michaeldaumconsulting.com
+# GridLayoutPlugin is Copyright (C) 2015-2019 Michael Daum http://michaeldaumconsulting.com
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -167,6 +167,5 @@ sub _inlineError {
   $msg =~ s/ at .*$//;
   return "<div class='foswikiAlert'>$msg</div>";
 }
-
 
 1;
