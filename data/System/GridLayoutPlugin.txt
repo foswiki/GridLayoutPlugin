@@ -497,6 +497,7 @@ All below classes are meant to be used as part of a =&lt;div class="..."> ... &l
 
 ---++  Change History
 %TABLE{columnwidths="7em" tablewidth="100%"}%
+|  19 Jan 2024 | don't draw a border for 12 col rows |
 |  12 Nov 2019 | don't clear before the grid |
 |  24 Oct 2017 | use different margins on mobile devices depending on the gutter size |
 |  25 Sep 2017 | proper clearfix and borer of columns all being laid out verticaly on mobile devices |
@@ -514,7 +515,7 @@ All below classes are meant to be used as part of a =&lt;div class="..."> ... &l
 %META:FIELD{name="Release" title="Release" value="%25$RELEASE%25"}%
 %META:FIELD{name="Description" title="Description" value="%25$SHORTDESCRIPTION%25"}%
 %META:FIELD{name="Repository" title="Repository" value="https://github.com/foswiki/GridLayoutPlugin"}%
-%META:FIELD{name="Copyright" title="Copyright" value="&copy; 2015-2019 Michael Daum http://michaeldaumconsulting.com"}%
+%META:FIELD{name="Copyright" title="Copyright" value="&copy; 2015-2024 Michael Daum"}%
 %META:FIELD{name="License" title="License" value="[[http://www.gnu.org/licenses/gpl.html][GPL (Gnu General Public License)]]"}%
 %META:FIELD{name="Home" title="Home" value="https://foswiki.org/Extensions/GridLayoutPlugin"}%
 %META:FIELD{name="Support" title="Support" value="Foswiki:Support/%25TOPIC%25"}%

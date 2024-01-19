@@ -44,9 +44,7 @@
 .foswikiRow { margin-top:2%; }
 
 .foswikiGrid > .foswikiRow > .foswikiBorder {
-  border-color:#ddd;
-  border-style:solid;
-  border-left-width:1px;
+  border-left:1px solid #ddd;
 }
 
 /* clear */
@@ -276,7 +274,7 @@
 .foswikiGrid > .foswikiRow > .foswikiCol10:first-child,
 .foswikiGrid > .foswikiRow > .foswikiCol11:first-child,
 .foswikiGrid > .foswikiRow > .foswikiCol12:first-child {
-  border-left-width:0 !important;
+  border-left:0 !important;
   /*padding-left:0 !important;*/
 }
 .foswikiGrid > .foswikiRow > .foswikiCol1:last-child,
@@ -413,12 +411,13 @@
     display:block;
   }
   .foswikiGrid > .foswikiRow > .foswikiBorder {
-    border-left-width:0;
-    border-top-width:1px;
-    padding-top:1.385em;
+    border-left:0;
+    /*padding-top:1.385em; ???*/
+    border-top:1px solid #ddd;
   }
-  .foswikiGrid > .foswikiRow > .foswikiBorder:first-of-type {
-    border-top-width:0;
+  .foswikiGrid > .foswikiRow > .foswikiBorder:first-of-type:not(.foswikiCol12) {
+    padding-top:0;
+    border-top:0;
   }
   .foswikiGrid > hr {
     display:none;
