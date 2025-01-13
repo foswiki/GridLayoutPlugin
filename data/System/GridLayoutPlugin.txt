@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1573558513" format="1.1"  version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1736755570" format="1.1"  version="1"}%
 ---+!! %TOPIC%
 %FORMFIELD{"Description"}%
 
@@ -21,7 +21,7 @@ Every grid starts with a =%<nop>BEGINGRID%= macro and must end with an =%<nop>EN
 | border="on/off" | switch on/off borders between columns and rows in the grid | off |
 | class="..." | add a css class to the =foswikiGrid= element | |
 | style="..." | add inline css styles to the =foswikiGrid= element | |
-| gutter="1/2/3/4/5" | configure the spacing between columns; the higher the value the more space | 4 |
+| gutter="0/1/2/3/4/5" | configure the spacing between columns; the higher the value the more space | 4 |
 
 =%<nop>BEGINROW{...}%=
 
@@ -101,32 +101,38 @@ a grid with two rows, row one using a 4/4/4 division, row two a 3/3/3/3 division
 </select>
 </div>
 
-%ADDTOZONE{"script" id="%TOPIC%" text="<script> 
+%ADDTOZONE{"script" 
+   requires="JQUERYPLUGIN"
+   id="%TOPIC%" 
+   text="<script> 
 jQuery(function($) {
   $('.test1 .foswikiCol').wrapInner(\"<div class='cell'></div>\")
-  $('.test1 .foswikiCol:odd > .cell').addClass('odd');
   $('.gutterSelector select').change(function() {
     var val = $(this).val();
     $('.foswikiGrid').removeClass('foswikiGutter0 foswikiGutter1 foswikiGutter2 foswikiGutter3 foswikiGutter4 foswikiGutter5').addClass(val);
   });
 });
 </script>"}%
-<literal>
-<style>
+%ADDTOZONE{"head"
+   id="%TOPIC%"
+   text="<style>
 .test1 .foswikiGrid {
   text-align: center;
   background-color: #eee;
   line-height:3em;
+  font-size:95%;
 }
 .test1 .foswikiGrid .foswikiRow {
   margin-top:0;
 }
-.test1 .cell {
-  background-color: #FFC0CB;
+.cell {
+  color:#333;
 }
-.test1 .cell.odd {
-  background-color: #ADD8E6;
-}
+.test1 .foswikiRow:nth-child(even) > .foswikiCol:nth-child(even) .cell,
+.test1 .foswikiRow:nth-child(odd) > .foswikiCol:nth-child(odd) .cell { background-color: #FFC0CB; }
+.test1 .foswikiRow:nth-child(odd) > .foswikiCol:nth-child(even) .cell,
+.test1 .foswikiRow:nth-child(even) > .foswikiCol:nth-child(odd) .cell { background-color: #ADD8E6; }
+
 .test2 .foswikiGrid {
   text-align:justify;
 }
@@ -145,8 +151,7 @@ jQuery(function($) {
 .gridLayoutPluginInstalled .screenshot {
   display:none;
 }
-</style>
-</literal>
+</style>"}%
 
 <img class="screenshot" src="%ATTACHURLPATH%/GridLayoutPluginSnap1.png" width="819" height="252" />
 <div class="test1">
@@ -497,6 +502,7 @@ All below classes are meant to be used as part of a =&lt;div class="..."> ... &l
 
 ---++  Change History
 %TABLE{columnwidths="7em" tablewidth="100%"}%
+|  13 Jan 2025 | don't use negative margins on the left and right side of a grid |
 |  19 Jan 2024 | don't draw a border for 12 col rows |
 |  12 Nov 2019 | don't clear before the grid |
 |  24 Oct 2017 | use different margins on mobile devices depending on the gutter size |
@@ -515,11 +521,11 @@ All below classes are meant to be used as part of a =&lt;div class="..."> ... &l
 %META:FIELD{name="Release" title="Release" value="%25$RELEASE%25"}%
 %META:FIELD{name="Description" title="Description" value="%25$SHORTDESCRIPTION%25"}%
 %META:FIELD{name="Repository" title="Repository" value="https://github.com/foswiki/GridLayoutPlugin"}%
-%META:FIELD{name="Copyright" title="Copyright" value="&copy; 2015-2024 Michael Daum"}%
+%META:FIELD{name="Copyright" title="Copyright" value="&copy; 2015-2025 Michael Daum"}%
 %META:FIELD{name="License" title="License" value="[[http://www.gnu.org/licenses/gpl.html][GPL (Gnu General Public License)]]"}%
 %META:FIELD{name="Home" title="Home" value="https://foswiki.org/Extensions/GridLayoutPlugin"}%
 %META:FIELD{name="Support" title="Support" value="Foswiki:Support/%25TOPIC%25"}%
-%META:FILEATTACHMENT{name="GridLayoutPluginSnap1-small.png" attachment="GridLayoutPluginSnap1-small.png" attr="t" comment="" date="1573558513" size="6751" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="GridLayoutPluginSnap3.png" attachment="GridLayoutPluginSnap3.png" attr="" comment="" date="1573558513" size="208417" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="GridLayoutPluginSnap2.png" attachment="GridLayoutPluginSnap2.png" attr="" comment="" date="1573558513" size="27447" user="ProjectContributor" version="1"}%
-%META:FILEATTACHMENT{name="GridLayoutPluginSnap1.png" attachment="GridLayoutPluginSnap1.png" attr="" comment="" date="1573558513" size="12089" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="GridLayoutPluginSnap1-small.png" attachment="GridLayoutPluginSnap1-small.png" attr="t" comment="" date="1736755570" size="6751" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="GridLayoutPluginSnap3.png" attachment="GridLayoutPluginSnap3.png" attr="" comment="" date="1736755570" size="208417" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="GridLayoutPluginSnap2.png" attachment="GridLayoutPluginSnap2.png" attr="" comment="" date="1736755570" size="27447" user="ProjectContributor" version="1"}%
+%META:FILEATTACHMENT{name="GridLayoutPluginSnap1.png" attachment="GridLayoutPluginSnap1.png" attr="" comment="" date="1736755570" size="12089" user="ProjectContributor" version="1"}%
