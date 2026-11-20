@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="ProjectContributor" comment="" date="1736755570" format="1.1"  version="1"}%
+%META:TOPICINFO{author="ProjectContributor" comment="" date="1736755570" format="1.1" version="1"}%
 ---+!! %TOPIC%
 %FORMFIELD{"Description"}%
 
@@ -502,6 +502,7 @@ All below classes are meant to be used as part of a =&lt;div class="..."> ... &l
 
 ---++  Change History
 %TABLE{columnwidths="7em" tablewidth="100%"}%
+|  20 Nov 2026 | use css var =--color-border= for grid colors |
 |  13 Jan 2025 | don't use negative margins on the left and right side of a grid |
 |  19 Jan 2024 | don't draw a border for 12 col rows |
 |  12 Nov 2019 | don't clear before the grid |
@@ -521,7 +522,7 @@ All below classes are meant to be used as part of a =&lt;div class="..."> ... &l
 %META:FIELD{name="Release" title="Release" value="%25$RELEASE%25"}%
 %META:FIELD{name="Description" title="Description" value="%25$SHORTDESCRIPTION%25"}%
 %META:FIELD{name="Repository" title="Repository" value="https://github.com/foswiki/GridLayoutPlugin"}%
-%META:FIELD{name="Copyright" title="Copyright" value="&copy; 2015-2025 Michael Daum"}%
+%META:FIELD{name="Copyright" title="Copyright" value="&copy; 2015-2026 Michael Daum"}%
 %META:FIELD{name="License" title="License" value="[[http://www.gnu.org/licenses/gpl.html][GPL (Gnu General Public License)]]"}%
 %META:FIELD{name="Home" title="Home" value="https://foswiki.org/Extensions/GridLayoutPlugin"}%
 %META:FIELD{name="Support" title="Support" value="Foswiki:Support/%25TOPIC%25"}%
